@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:psu_eduportal/pages/activity.dart';
 import 'package:psu_eduportal/pages/home.dart';
+import 'package:psu_eduportal/pages/profile.dart';
+import 'package:psu_eduportal/pages/setting.dart';
+import 'package:psu_eduportal/pages/time-table.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,65 +17,55 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: const Main(),
     );
   }
 }
 
-// class MyHomePage extends StatefulWidget {
-//   const MyHomePage({super.key, required this.title});
+// Main Widget
+class Main extends StatefulWidget {
+  const Main({super.key});
 
-//   final String title;
+  @override
+  State<Main> createState() => _MainState();
+}
 
-//   @override
-//   State<MyHomePage> createState() => _MyHomePageState();
-// }
+class _MainState extends State<Main> {
 
-// class _MyHomePageState extends State<MyHomePage> {
-//   int _counter = 0;
+   final logo = 'assets/Logo.png';
 
-//   void _incrementCounter() {
-//     setState(() {
-//       // This call to setState tells the Flutter framework that something has
-//       // changed in this State, which causes it to rerun the build method below
-//       // so that the display can reflect the updated values. If we changed
-//       // _counter without calling setState(), then the build method would not be
-//       // called again, and so nothing would appear to happen.
-//       _counter++;
-//     });
-//   }
+  int currect_page = 0;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-//         title: Text(widget.title),
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             const Text(
-//               'You have pushed the button this many times:',
-//             ),
-//             Text(
-//               '$_counter',
-//               style: Theme.of(context).textTheme.headlineMedium,
-//             ),
-//           ],
-//         ),
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: _incrementCounter,
-//         tooltip: 'Increment',
-//         child: const Icon(Icons.add),
-//       ), // This trailing comma makes auto-formatting nicer for build methods.
-//     );
-//   }
-// }
+  final List<Widget> Pages = [
+    Home(),
+    Time_Table(),
+    Profile(),
+    Activity(),
+    Setting()
+  ];
+
+  final PageStorageBucket bucket = PageStorageBucket();
+  Widget CurrentPage = Home();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 100,
+        title: Image.asset(logo, height: 60,),
+        centerTitle: true,
+      ),
+      body: PageStorage(
+        child: CurrentPage,
+        bucket: bucket,),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.people),
+        onPressed: () {},),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    );
+  }
+}
