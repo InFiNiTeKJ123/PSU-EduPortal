@@ -66,7 +66,12 @@ class _MainState extends State<Main> {
 
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.person_2_outlined),
-        onPressed: () {},),
+        onPressed: () {
+            setState(() {
+              CurrentPage = const Profile();
+              current_page = 4;
+            });
+        },),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       bottomNavigationBar: MenuBar(),
