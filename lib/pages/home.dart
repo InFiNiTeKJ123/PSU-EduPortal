@@ -8,13 +8,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  final logo = 'assets/Logo.png';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("PSU EduPortal",),
+        toolbarHeight: 100,
+        title: Image.asset(logo, height: 60,),
         centerTitle: true,
+        
       ),
       body: const Center(
         child: Column(
