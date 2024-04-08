@@ -5,6 +5,8 @@ class Setting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Center(
+      child: Column(children: [Text("Setting Pages", style: TextStyle(fontSize: 50),)],),
+    );
   }
 }

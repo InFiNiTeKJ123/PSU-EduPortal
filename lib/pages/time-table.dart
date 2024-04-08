@@ -5,6 +5,8 @@ class Time_Table extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Center(
+      child: Column(children: [Text("Table Pages", style: TextStyle(fontSize: 50),)],),
+    );
   }
 }

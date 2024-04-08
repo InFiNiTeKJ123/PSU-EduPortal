@@ -16,10 +16,12 @@ class _HomeState extends State<Home> {
         title: const Text("PSU EduPortal",),
         centerTitle: true,
       ),
-      body: const Column(
-        children: [
-          Text("สวัสดีครับท่านผู้เจริญทั้งหลาย")
-        ],
+      body: const Center(
+        child: Column(
+          children: [
+            Text("สวัสดีครับท่านผู้เจริญทั้งหลาย")
+          ],
+        ),
       ),
 //      bottomNavigationBar: Container(backgroundColor: Theme.of(context).colorScheme.inversePrimary),
     );

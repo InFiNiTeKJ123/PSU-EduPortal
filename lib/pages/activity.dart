@@ -5,6 +5,8 @@ class Activity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Center(
+      child: Column(children: [Text("Activity Pages", style: TextStyle(fontSize: 50))],),
+    );
   }
 }
