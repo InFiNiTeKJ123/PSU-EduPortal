@@ -65,7 +65,7 @@ class _MainState extends State<Main> {
         ),
 
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.people),
+        child: const Icon(Icons.person_2_outlined),
         onPressed: () {},),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
@@ -79,7 +79,7 @@ class _MainState extends State<Main> {
       notchMargin: 10,
       height: 70,
       child: Container(
-        height: 60,
+        height: 70,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -87,6 +87,7 @@ class _MainState extends State<Main> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 MaterialButton(
+                  minWidth: 40,
                   onPressed: () {
                     setState(() {
                       CurrentPage = const Home();
@@ -100,6 +101,7 @@ class _MainState extends State<Main> {
                     ],),
                   ),
                 MaterialButton(
+                  minWidth: 40,
                   onPressed: () {
                     setState(() {
                       CurrentPage = const Time_Table();
@@ -108,7 +110,7 @@ class _MainState extends State<Main> {
                   },
                   child: Column(
                     children: [
-                      Icon(Icons.home, color: current_page == 1 ? Colors.blue : Colors.grey,),
+                      Icon(Icons.explore, color: current_page == 1 ? Colors.blue : Colors.grey,),
                       Text("ตาราง", style: TextStyle(color: current_page == 1 ? Colors.blue : Colors.grey),)
                     ],),
                   ),
@@ -118,6 +120,7 @@ class _MainState extends State<Main> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 MaterialButton(
+                  minWidth: 40,
                   onPressed: () {
                     setState(() {
                       CurrentPage = const Activity();
@@ -131,6 +134,7 @@ class _MainState extends State<Main> {
                     ],),
                   ),
                 MaterialButton(
+                  minWidth: 40,
                   onPressed: () {
                     setState(() {
                       CurrentPage = const Setting();
